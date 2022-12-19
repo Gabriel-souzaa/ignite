@@ -1,6 +1,6 @@
 import { Repository } from 'typeorm';
 import { myDataSource } from '../../../../database/data-source';
-import { Category } from '../../entities/Category';
+import { Category } from '../../entities';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,

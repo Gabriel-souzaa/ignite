@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js typeorm migration:run
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Programas\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;"C:\Users\Gabriel\AppData\Roaming\nvm;C:\Program Files\nodejs";C:\Users\Gabriel\AppData\Roaming\npm;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;D:\Programas\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;"C:\Users\Gabriel\AppData\Roaming\nvm;C:\Program Files\nodejs";C:\Users\Gabriel\AppData\Roaming\npm;C:\Program Files\nodejs;C:\Users\Gabriel\AppData\Local\Programs\Microsoft VS Code\bin
@@ -14,9 +14,13 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: D:\Projects\Rocktseat\ignite\rentalx\package.json: Unexpected token } in JSON at position 266
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1629:59
+  SyntaxError: Invalid value type 90:0 in D:\Projects\Rocktseat\ignite\rentalx\yarn.lock
+      at Parser.unexpected (C:\Program Files (x86)\Yarn\lib\cli.js:63491:11)
+      at Parser.parse (C:\Program Files (x86)\Yarn\lib\cli.js:63619:16)
+      at Parser.parse (C:\Program Files (x86)\Yarn\lib\cli.js:63596:26)
+      at parse (C:\Program Files (x86)\Yarn\lib\cli.js:63696:21)
+      at module.exports.exports.default (C:\Program Files (x86)\Yarn\lib\cli.js:63258:96)
+      at Function.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:3068:63)
       at Generator.next (<anonymous>)
       at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
       at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
@@ -30,6 +34,7 @@ npm manifest:
     "scripts": {
       "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
       "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
+      "migration:run": "typeorm migration:run -d src/database/data.source.ts"
     },
     "devDependencies": {
       "@types/express": "^4.17.13",
